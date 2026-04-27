@@ -1,6 +1,6 @@
 import type { GenerateRequest, GenerateResponse } from "./types";
 
-const DEFAULT_API_BASE = "http://localhost:8000";
+const DEFAULT_API_BASE = "https://listingai-pc50.onrender.com";
 
 export function getApiBase(): string {
   return (import.meta.env.VITE_API_URL as string | undefined) ?? DEFAULT_API_BASE;
