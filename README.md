@@ -31,8 +31,8 @@ npm run dev
 Create a .env file in listingai/backend/:
 OPENAI_API_KEY=your-key-here
 
-## Live Demo
-[listingai.vercel.app](https://listingai.vercel.app)
+## Deployed Link:
+(https://listingai-pearl-pi.vercel.app/)
 
 ## Author
 Venkata Sai Ashrit Kommireddy
