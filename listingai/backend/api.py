@@ -4,6 +4,7 @@ from typing import Any
 
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
+import httpx
 from openai import OpenAI
 from pydantic import BaseModel, Field
 
@@ -102,7 +103,10 @@ def generate(req: GenerateRequest) -> GenerateResponse:
     if not api_key:
         raise HTTPException(status_code=500, detail="OPENAI_API_KEY is not set.")
 
-    client = OpenAI(api_key=api_key)
+    client = OpenAI(
+        api_key=api_key,
+        http_client=httpx.Client(),
+    )
 
     prompt = PROMPT_TEMPLATE.format(
         address=req.address.strip(),
